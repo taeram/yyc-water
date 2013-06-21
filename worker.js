@@ -144,7 +144,7 @@ var sendSms = function(link) {
             // Truncate the body length if necessary
             var body = '';
             var truncateSize = 0;
-            while (body.length == 0 || body.length > MAX_SMS_LENGTH) {
+            while (body.length === 0 || body.length > MAX_SMS_LENGTH) {
                 if (truncateSize > 0) {
                     link.title = link.title.substr(0, (link.title.length - truncateSize)) + '... ';
                 }
