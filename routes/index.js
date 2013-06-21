@@ -5,7 +5,8 @@ exports.index = function(req, res){
         title: 'YYC Water',
         scrapedFromUrl: process.env.YYC_WATER_URL,
         addNumberIsSuccessful: (req.query.success !== undefined),
-        twiloFromNumber: process.env.TWILIO_FROM_NUMBER
+        twiloFromNumber: process.env.TWILIO_FROM_NUMBER,
+        scrapeInterval: process.env.SCRAPE_INTERVAL_MINUTES
     });
 };
 

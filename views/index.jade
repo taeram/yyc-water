@@ -19,7 +19,9 @@ block content
                 =twiloFromNumber
 
     div
-        small Updates every 5 minutes using data from&nbsp
+        small Updates every&nbsp;
+            =scrapeInterval
+            | &nbsp;minutes using data from&nbsp
             a(href=scrapedFromUrl) albertahealthservices.ca
     div
         small(id="last-updated") Last Updated:&nbsp;

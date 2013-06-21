@@ -171,6 +171,5 @@ var sendSms = function(link) {
     });
 };
 
-
 // Start the show
-retrievePage();
+setInterval(retrievePage, process.env.SCRAPE_INTERVAL_MINUTES * 60 * 1000);
