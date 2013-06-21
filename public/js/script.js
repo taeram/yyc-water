@@ -5,6 +5,6 @@ $(function () {
     };
 
     getLastUpdatedTime();
-    setInterval(getLastUpdatedTime, 5000);
+    setInterval(getLastUpdatedTime, 30 * 1000);
 });
 
