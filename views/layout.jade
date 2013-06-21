@@ -8,15 +8,22 @@ html
     link(rel='stylesheet', href='/css/style.css')
   body
     div(class="container",style="text-align: center")
-        h1(class="container")= title
+        h1= title
 
         block content
 
-        small
-            Written by
-            a(href="http://twitter.com/taeram",target="_blank")&nbsp;
-                span(class="icon-twitter")
-                | &nbsp;taeram
+        div(style="position: absolute; left: 46%; bottom: 20px;")
+            div
+                small Written by
+                    a(href="http://twitter.com/taeram",target="_blank")&nbsp;
+                        span(class="icon-twitter")
+                        | &nbsp;taeram
+
+            div
+                small Source available on
+                    a(href="http://github.com/taeram/yyc-water",target="_blank")&nbsp;
+                        span(class="icon-github")
+                        | &nbsp;GitHub
 
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
     script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js")

@@ -4,7 +4,7 @@ block content
     if (addNumberIsSuccessful === true)
         div(class="text-success") Your number has been added successfully!
 
-    div(class="row",style="margin: 20px")
+    div(class="row well",style="margin-top: 20px")
         p Get a text message whenever there are any new Boil Water Orders for Alberta
         form(action="/add",method="post",class="form form-inline")
             input(style="margin-right: 15px",name="number",placeholder="403-111-2233")
@@ -18,11 +18,11 @@ block content
             strong
                 =twiloFromNumber
 
-    div
-        small Updates every&nbsp;
-            =scrapeInterval
-            | &nbsp;minutes using data from&nbsp
-            a(href=scrapedFromUrl) albertahealthservices.ca
-    div
-        small(id="last-updated") Last Updated:&nbsp;
-            span(id="last-updated-time")
+    div(class="row",style="margin-top: 20px")
+        p(style="margin-top: 10px") Updates every&nbsp;
+                =scrapeInterval
+                | &nbsp;minutes using data from&nbsp
+                a(href=scrapedFromUrl) albertahealthservices.ca
+
+            div(id="last-updated") Last Updated:&nbsp;
+                    span(id="last-updated-time")
