@@ -18,7 +18,6 @@ var processPage = function (err, res, body) {
     console.log("Processing the page");
 
     var $ = require('jquery'),
-        md5 = require('md5'),
         url = require('url');
 
     if (!err && res.statusCode == 200) {
@@ -47,7 +46,6 @@ var processPage = function (err, res, body) {
 
                     // Extract the link details
                     var link = {
-                        id: md5.digest_s(pageUrl),
                         url: pageUrl,
                         title: "Boil Water Advisory: " + $(links[j]).text()
                     };
