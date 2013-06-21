@@ -75,7 +75,7 @@ var processLinks = function (link) {
     var bitly = new Bitly(process.env.BITLY_USERNAME, process.env.BITLY_API_KEY);
 
     // Do we have this link cached?
-    redisClient.get(link.id, function (err, cachedLink) {
+    redisClient.get(link.title, function (err, cachedLink) {
         if (err) {
             throw err;
         }
@@ -97,7 +97,7 @@ var processLinks = function (link) {
             link.shortUrl = res.data.url;
 
             // Cache the link
-            redisClient.set(link.id, JSON.stringify(link));
+            redisClient.set(link.title, JSON.stringify(link));
 
             // Send out the link
             sendSms(link);
@@ -159,7 +159,7 @@ var sendSms = function(link) {
                 body: body
             };
 
-            console.log("Sending SMS to " + options.to + " from " + options.from + " with: " + options.body);
+            console.log("Sending SMS to " + options.to + ": " + options.body);
 
             twilio.sms.messages.create(options, function(err, res) {
                 if (err) {
@@ -172,4 +172,5 @@ var sendSms = function(link) {
 };
 
 // Start the show
+retrievePage();
 setInterval(retrievePage, process.env.SCRAPE_INTERVAL_MINUTES * 60 * 1000);
