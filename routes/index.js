@@ -48,7 +48,8 @@ exports.add = function (req, res) {
 
         // Store the new list of number
         redisClient.set('sms-numbers', JSON.stringify(numbers));
-console.log('Stored numbers', numbers);
+        console.log('Stored numbers', numbers);
+
         return res.redirect('/?success');
     });
 };
