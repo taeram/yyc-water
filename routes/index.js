@@ -17,17 +17,17 @@ exports.last_updated = function(req, res){
 };
 
 exports.add = function (req, res) {
-    var sanitize = require('validator').sanitize,
-        _ = require('underscore');
+    var _ = require('underscore');
 
     // Sanitize the number
     var number = req.body.number;
-    number = sanitize(number).toInt();
+    number = number.replace(/[^0-9]/g, '');
 
     // Validate the number
-    if (number < 1000000000 || number > 9999999999) {
+    if (number.length != 10) {
         return res.send('Invalid phone number. Must be exactly 10 digits long. Eg. 403-111-2233', 500);
     }
+    number = parseInt(number, 10);
 
     // Get the current list of numbers
     redisClient.get('sms-numbers', function (err, numbersJson) {

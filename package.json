@@ -14,8 +14,7 @@
     "time": "*",
     "twilio": "*",
     "underscore": "*",
-    "url": "*",
-    "validator": "*"
+    "url": "*"
   },
   "engines": {
     "node": "0.10.x",
