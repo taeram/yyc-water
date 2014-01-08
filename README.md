@@ -26,7 +26,3 @@ heroku config:set \
     TWILIO_FROM_NUMBER=<your twilio from number> \
     SCRAPE_INTERVAL_MINUTES=5
 ```
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/taeram/yyc-water/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
